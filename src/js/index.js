@@ -5,6 +5,26 @@
 // - [ ] 메뉴가 추가되고 나면, input은 빈 값으로 초기화한다.
 // - [ ] 사용자 입력값이 빈 값이라면 추가되지 않는다.
 
+function App() {
+  // 엔터를 쳤을 때 form 태그가 자동 전송되는것을 막아준다
+  document
+    .querySelector("#espresso-menu-form")
+    .addEventListener("submit", e => {
+      e.preventDefault()
+    })
+  // 메뉴의 이름을 입력받기
+  document
+    .querySelector("#espresso-menu-name")
+    .addEventListener("keypress", e => {
+      // 이벤트의 키가 엔터키라면
+      if (e.key === 'Enter') {
+        console.log(e.key)
+        console.log(document.querySelector("#espresso-menu-name").value)
+      }
+    })
+}
+
+App()
 // TODO 메뉴 수정
 // - [ ] 메뉴의 수정 버튼을 눌러 메뉴 이름 수정할 수 있다.
 // - [ ] 메뉴 수정시 브라우저에서 제공하는 `prompt` 인터페이스를 활용한다.
